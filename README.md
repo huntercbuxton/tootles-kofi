@@ -11,6 +11,6 @@ referenced this medium tutorial https://medium.com/simform-engineering/building-
 
 import the css from the module itself in your react project
 
-```     import 'tootles-kofi/dist/tootles-kofi.css';         ```
+```     import 'tootles-kofi/dist/tootles-kofi.css';        ```
 
 
