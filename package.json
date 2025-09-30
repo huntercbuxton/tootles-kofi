@@ -15,7 +15,7 @@
     "build": "tsc && vite build",
     "test": "vitest run",
     "test-watch": "vitest",
-    "test:ui": "vitest --ui" 
+    "test:ui": "vitest --ui"
   },
   "author": "Hunter C Buxton",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "@types/react": "^19.1.15",
     "jsdom": "^27.0.0",
     "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
     "vite-plugin-dts": "^4.5.4",
