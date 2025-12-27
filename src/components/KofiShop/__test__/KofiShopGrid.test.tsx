@@ -1,7 +1,7 @@
 //KofiShop/__test__/KofiShopGrid.test.tsx
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import KofiShopGrid from "../KofiShop";
+import KofiShopGrid, { filterSoldOut } from "../KofiShop";
 
 describe("KofiShopGrid", () => {
   it("grid should render card(s) when inventory data is provided", () => {
@@ -49,4 +49,39 @@ describe("KofiShopGrid", () => {
     expect(screen.getByText("sold out item")).toBeInTheDocument(); 
   }); 
 
+});
+
+
+
+describe("filterSoldOutInventory", () => {
+
+  it("should return an empty array if the argument is an empty array", () => { 
+    const result = filterSoldOut([])
+    expect(result).toEqual(expect.any(Array));
+    expect(result.length).toEqual(0)
+  });
+
+  it("should return an empty array if the argument contains only sold out items", () => { 
+    const result = filterSoldOut([
+          {
+            Alias: "aaaaaa",
+            Name: "available item",
+            Price: "2000",
+            ThumbnailUrls: ["asdasdad"],
+            IsSoldOut: true,
+            Description: "description text",
+          },
+          {
+            Alias: "zzzzzz",
+            Name: "sold out item",
+            Price: "30",
+            ThumbnailUrls: ["asdasdad"],
+            IsSoldOut: true,
+            Description: "description text",
+          }
+        ])
+
+    expect(result).toEqual(expect.any(Array));
+    expect(result.length).toEqual(0)
+  }); 
 });

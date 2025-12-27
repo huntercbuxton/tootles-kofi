@@ -12,14 +12,9 @@ export interface KofiShopCardProps {
 export interface KofiShopGridProps {
   inventory: KofiShopCardProps[];
 }
- 
-export function sortSoldOutLast(props: KofiShopGridProps) {
-  return props.inventory.sort((a, b) => {
-    if (a.IsSoldOut === b.IsSoldOut) {
-      return 0;
-    }
-    return a.IsSoldOut ? 1 : -1;
-  });
+
+export function filterSoldOut(inventory: KofiShopCardProps[]) {
+  return inventory.filter(x => x.IsSoldOut !== true) 
 }
 
 
