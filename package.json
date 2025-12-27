@@ -1,6 +1,6 @@
 {
   "name": "tootles-kofi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React components for embedding kofi shop products into custom web pages",
   "keywords": [
     "kofi",
@@ -27,7 +27,7 @@
     "prettier": "^3.6.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2",
-    "vite": "^7.1.7",
+    "vite": "^7.3.0",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4"
   },

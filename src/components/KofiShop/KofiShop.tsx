@@ -1,4 +1,4 @@
-import "./kofi_shop.css";
+import "./kofi_shop.css"; 
 
 export interface KofiShopCardProps {
   Alias: string;
@@ -38,13 +38,11 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
       </div>
     </a>
   );
-};
-
+}; 
 // this component clones the layout of search results on the `shop` page
-export const KofiShopGrid = (props: KofiShopGridProps) => {
+const KofiShopGrid = (props: KofiShopGridProps) => {
   return (
-    <div id="kofi-item-grid" className="shop_base_colorscheme">
-      {" "}
+    <div id="kofi-item-grid"> 
       {props.inventory.map((item, index) => (
         <KofiShopCard
           key={index}

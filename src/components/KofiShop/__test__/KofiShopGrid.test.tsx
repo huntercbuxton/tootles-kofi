@@ -1,7 +1,7 @@
 //KofiShop/__test__/KofiShopGrid.test.tsx
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { KofiShopGrid } from "../KofiShop";
+import KofiShopGrid from "../KofiShop";
 
 describe("KofiShopGrid", () => {
   it("grid should render correctly", () => {
