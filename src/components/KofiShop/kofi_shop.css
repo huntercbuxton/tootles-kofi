@@ -1,14 +1,14 @@
  
 #kofi-item-grid {
-  min-height: 320px;
-  padding: 0 1em;
-  border-radius: .2em;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,3fr));
-  grid-gap: 1.6em;
-  width: 100%;
-  max-width: 1000px;
+    min-height: 320px;
+    padding: 0 1em;
+    border-radius: .2em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,3fr));
+    grid-gap: 1.6em;
+    width: 100%;
+    max-width: 1000px;
 }
  
 a.shop-item {
