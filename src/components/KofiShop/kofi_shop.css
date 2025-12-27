@@ -75,7 +75,7 @@ img.shop-item-thumbnail {
     font-size: 16px;
 }
 
-span.shop-item-price {
+span.shop-item-price, span.shop-item-sold-out {
     background-color: #fcbf47 !important;
     border-color: #fcbf47 !important;
     background: rgba(76, 141, 238, .9294117647);

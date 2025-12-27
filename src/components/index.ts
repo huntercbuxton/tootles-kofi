@@ -1,1 +1,1 @@
-export { KofiShopCard, KofiShopGrid } from "./KofiShop";
+export { KofiShopCard, KofiShopGrid, sortSoldOutLast } from "./KofiShop";

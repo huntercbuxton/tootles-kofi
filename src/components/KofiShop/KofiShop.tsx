@@ -5,16 +5,27 @@ export interface KofiShopCardProps {
   Name: string;
   Price: string;
   ThumbnailUrls: string[];
+  IsSoldOut: boolean;
   Description: string;
 }
 
 export interface KofiShopGridProps {
   inventory: KofiShopCardProps[];
 }
+ 
+export function sortSoldOutLast(props: KofiShopGridProps) {
+  return props.inventory.sort((a, b) => {
+    if (a.IsSoldOut === b.IsSoldOut) {
+      return 0;
+    }
+    return a.IsSoldOut ? 1 : -1;
+  });
+}
+
 
 // clones the views of individual items for sale on a kofi user's 'shop' page
 export const KofiShopCard = (props: KofiShopCardProps) => {
-  const { Alias, Name, Price, ThumbnailUrls, Description } = props;
+  const { Alias, Name, Price, ThumbnailUrls, IsSoldOut, Description } = props;
 
   return (
     <a href={`http://ko-fi.com/s/${Alias}`} className="shop-item">
@@ -25,7 +36,8 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
           className="shop-item-thumbnail"
         />
         <div className="shop-item-price-container">
-          <span className="shop-item-price">${Price}</span>
+          {IsSoldOut ? <span className="shop-item-sold-out">Sold Out</span> : 
+              <span className="shop-item-price">${Price}</span> } 
         </div>
       </div>
       <div className="shop-item-details-container">
@@ -39,6 +51,8 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
     </a>
   );
 }; 
+
+
 // this component clones the layout of search results on the `shop` page
 const KofiShopGrid = (props: KofiShopGridProps) => {
   return (
@@ -49,6 +63,7 @@ const KofiShopGrid = (props: KofiShopGridProps) => {
           Alias={item.Alias}
           Name={item.Name}
           Price={item.Price}
+          IsSoldOut={item.IsSoldOut}
           ThumbnailUrls={item.ThumbnailUrls}
           Description={item.Description}
         />
@@ -56,5 +71,6 @@ const KofiShopGrid = (props: KofiShopGridProps) => {
     </div>
   );
 };
+ 
 
 export default KofiShopGrid;
