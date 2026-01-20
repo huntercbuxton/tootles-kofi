@@ -1,0 +1,187 @@
+/* 
+class 'kofi-commissions-root' is used only on top-level tags of importable components; 
+these styles are meant to be inherited by child elements
+*/
+.kofi-commissions-root {
+    font-size: 16px;
+    color: #192025;
+    line-height: 1.42857143;
+}
+
+.commissions-list-wrapper {
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0 16px;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.kofi-commission-card {
+    height: auto;
+    max-height: 482px;
+    width: 600px;
+    max-width: 100%;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    padding: 0;
+    flex-flow: row wrap;
+    -webkit-box-pack: start;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 14px;
+    flex: 2 25%;
+    margin: 0 auto;
+    text-decoration: none;
+    user-select: none;
+    outline: 0;
+    box-shadow: none !important;
+    border-radius: 18px !important;
+    position: relative;
+    min-width: 270px;
+    place-content: flex-start;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    display: flex;
+    min-height: 45px;
+
+    color: inherit;
+    padding: 15px 5px;
+}
+
+.kofi-commission-card > * {
+    padding: 16px;
+    width: 100%;
+}
+
+.kofi-commission-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.commission-name-column {
+    flex-direction: row;
+    flex-grow: 2;
+    justify-self: stretch;
+}
+
+.commission-name { 
+    font-size: 20px !important;
+}
+
+.commission-price-column {
+    margin-left: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: fit-content;
+}
+
+.commission-price {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 4px 0.75em;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px !important;
+    color: #fcbf47 !important;
+    background: linear-gradient(145deg, #fcbf4729, #fcbf4729), linear-gradient(145deg, #ffffffb5, #ffffff) !important;
+    border-radius: 8px;
+}
+
+.kofi-thumbnail-slider {
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 160px;
+    padding: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 55px;
+    right: -10px;
+    background-color: white;
+    border-width: 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(149,185,193,.5); 
+    border-color: white;
+    border-style: solid;
+    z-index: 2;
+}
+
+a.thumbnail-slide {
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    width: 32% !important;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    border-radius: 14px;
+    background-color: var(--bg-color-layer-2);
+    border: var(--border-gray);
+    object-fit: contain;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    transition-property: transform;
+    border: .5px solid #b4b4b4;
+}
+
+img.thumbnail-slide {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color-layer-2);
+    max-height: 142px;
+    object-fit: scale-down;
+    border-radius: 0;
+    image-rendering: auto;
+    border: 0;
+}
+
+.add-ons-available {
+    margin-bottom: 16px;
+    font-size: 14px !important;
+    font-weight: 500; 
+    padding: 0 5px; 
+}
+
+.kofi-action-button {
+    background-color: #fcbf47 !important;
+    border-color: #fcbf47 !important;
+    padding: .4em 1.2em; 
+    border-width: 5px;
+    border-radius: 5px;
+    border-style: solid;
+    font-weight: bold;
+    min-width: 10em;
+    text-align: center;
+    color: white;
+    border-radius: 100px !important;
+    
+}
+
+a.kofi-action-button {
+    text-decoration: none; 
+}
+
+.request-commission-btn {
+    min-width: 50%;
+    width: fit-content;  
+    display: inline-block;
+}
+

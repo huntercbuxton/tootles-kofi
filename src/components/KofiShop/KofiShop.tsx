@@ -43,8 +43,7 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
 // this component clones the layout of search results on the `shop` page
 export const KofiShopGrid = (props: KofiShopGridProps) => {
   return (
-    <div id="kofi-item-grid" className="shop_base_colorscheme">
-      {" "}
+    <div id="kofi-item-grid" className="shop_base_colorscheme"> 
       {props.inventory.map((item, index) => (
         <KofiShopCard
           key={index}
