@@ -7,11 +7,11 @@ describe("KofiCommissionCard", () => {
   it("card should render correctly", () => {
     render(
       <KofiCommissionCard
-        Alias={"aaaaaa"}
-        Name={"kofi commission card example"}
+        Alias={"abcdefg"}
+        Name={"kofi commission example"}
         Price={"100.00"}
         AddOnsAvailable={true}
-        ThumbnailUrls={["64c0e486-bfcd-4c0a-b2c3-a3d70690b1b8_ilovethisyarncolors-1.png"]}
+        ThumbnailUrls={["ilovethisyarncolors-1.png"]}
         Description={"placeholder"}
       />,
     );
