@@ -39,15 +39,15 @@ describe("KofiCommissionCard", () => {
         Description={mockCommissionData.Description}
       />,
     );
-    
-    expect(screen.getByText("Request on Ko-fi")).toBeInTheDocument(); 
+
+    expect(screen.getByText("Request on Ko-fi")).toBeInTheDocument();
 
     expect(screen.getByText(mockCommissionData.Name)).toBeInTheDocument();
     // should render the same text but without the newline chars
     expect(screen.getByText("Custom cozy hand-crocheted acrylic cat ear beanie. Stretchy, warm, and fun—ideal for y2k, kawaii, cosplay, or adding a bold statement to your winter look. You get to choose the colors!")).toBeInTheDocument();
     expect(screen.getByText("$20 +")).toBeInTheDocument();
     expect(screen.getByText("Add-ons available")).toBeInTheDocument();
-    
+
   });
 });
 
@@ -64,13 +64,13 @@ describe("KofiCommissionCard", () => {
         Description={mockCommissionData.Description}
       />,
     );
-    
+
     // check for an image matching the src and alt for the first thumbnail url
     const thumbnailImg = container.querySelector(`img[src="https://storage.ko-fi.com/cdn/useruploads/post/4f6ee6d1-aa4f-458e-8c99-193c0f42efcd_untitled-3.png"]`)
     expect(thumbnailImg?.getAttribute('alt')).toMatch('Custom Cat Ear Beanie image 0')
     // check all the thumbnail urls are rendered as an image in the slider
     const thumbnailImgCount = container.querySelectorAll('a.thumbnail-slide > img.thumbnail-slide').length
     expect(thumbnailImgCount).toEqual(14)
-    
+
   });
 });
