@@ -1,7 +1,7 @@
 //KofiShop/__test__/KofiShopCard.test.tsx
 import { describe, expect, it } from "vitest";
 import { render, screen, container, getNodeText } from "@testing-library/react";
-import {within} from '@testing-library/dom'
+// import {within} from '@testing-library/dom'
 import { KofiShopCard } from "../KofiShop";
 
 const mockCardProps = {
