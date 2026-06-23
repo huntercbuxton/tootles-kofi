@@ -1,6 +1,6 @@
 {
   "name": "tootles-kofi",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "React components for embedding kofi shop products into custom web pages",
   "keywords": [
     "kofi",
@@ -21,10 +21,12 @@
   "license": "ISC",
   "devDependencies": {
     "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^16.3.0",
+    "@testing-library/react": "^16.2.0",
     "@types/react": "^19.1.15",
     "jsdom": "^27.0.0",
     "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2",
     "vite": "^7.3.0",
@@ -32,7 +34,8 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "react": "^19.1.1"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "type": "module",
   "main": "dist/index.cjs.js",
