@@ -18,7 +18,7 @@ const mockCardProps = {
 
 
 describe("KofiShopCard", () => {
-  it("Should render all text for the item display", () => {
+  it("Should render all text for the item", () => {
     const { container } = render(
       <KofiShopCard
         Alias={mockCardProps.Alias}
@@ -34,7 +34,8 @@ describe("KofiShopCard", () => {
     // check for description 
     expect(screen.getByText(/Handmade cotton crochet shoulder bag featuring adorable, colorful smiley face squares. Lined with ye.../i)).toBeInTheDocument();
     // check price text
-    expect(container.querySelector('span.shop-item-price')).toHaveTextContent("$25"); 
+    expect(container.querySelector('span.shop-item-price')).toHaveTextContent("$25");
+    
   });
 });
 

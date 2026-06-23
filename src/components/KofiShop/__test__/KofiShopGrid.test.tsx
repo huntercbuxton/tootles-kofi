@@ -52,13 +52,13 @@ describe("KofiShopGrid", () => {
     
     // check the number of inventory items matches the number of grid cells
     const gridCellCount = grid?.childElementCount
-    expect(grid.children.length).toBe(mockInventory.length); 
+    expect(gridCellCount).toBe(mockInventory.length); 
 
     // check each inventory item is rendered by a gridCell in the same sequence
     for (let i = 0; i < gridCellCount; i++) {
       const gridCell = grid.children[i];
       expect(gridCell).toHaveClass('shop-item');
-      expect(gridCell.querySelector('h5.shop-item-name').textContent).toMatch(mockInventory[i].Name)
+      expect(gridCell.querySelector('h4.shop-item-name').textContent).toMatch(mockInventory[i].Name)
       expect(gridCell.querySelector('span.shop-item-price')?.textContent).toMatch(`$${mockInventory[i].Price}`)
     }
   });

@@ -25,13 +25,13 @@
     "@types/react": "^19.1.15",
     "jsdom": "^27.0.0",
     "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2",
     "vite": "^7.3.0",
     "vite-plugin-dts": "^4.5.4",
-    "vitest": "^3.2.4",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "react": "^19.1.1",
@@ -43,5 +43,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
-  ]
+  ],
+  "dependencies": {
+    "@testing-library/dom": "^10.4.1"
+  }
 }

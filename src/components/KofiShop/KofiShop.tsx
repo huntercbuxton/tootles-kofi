@@ -31,7 +31,7 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
       </div>
       <div className="shop-item-details-container">
         <div className="shop-item-details">
-          <h5 className="shop-item-name">{Name}</h5>
+          <h4 className="shop-item-name">{Name}</h4>
           {Description && <span className="shop-item-description">{Description}</span> }
         </div>
       </div>
