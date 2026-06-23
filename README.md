@@ -1,15 +1,14 @@
 # Tootle's Kofi
 
+## Quickstart
 
-## Quickstart:
-
-**import the css from the module itself in your react project, :**
+First, import the css from the module itself in your react project
 
 ```import 'tootles-kofi/dist/tootles-kofi.css';```
 
 **prepare shop item data, e.g.:**
 
-```
+```json
 {
     "items": [
         {
@@ -38,7 +37,7 @@
 
 **import the KofiShopGrid component and pass the list of shop items data to the 'inventory' prop**:
 
-```
+```javascript
 import 'tootles-kofi/dist/tootles-kofi.css'
 import { KofiShopGrid } from 'tootles-kofi'
 ....
@@ -53,10 +52,9 @@ const MyCustomComponent = ({shop_items_data}) => {
 }
 ```
 
-
 **alternatively, you can use the KofiShopCard component to display just one item, e.g.**
 
-```
+```javascript
 import 'tootles-kofi/dist/tootles-kofi.css'
 import { KofiShopCard } from 'tootles-kofi'
 ... 
@@ -77,16 +75,12 @@ const MyCustomComponent = ({shop_items_data}) => {
 
 ```
 
-## Community:
+## Community
 
 contribute on [issues](https://github.com/huntercbuxton/tootles-kofi/issues)
 
-
-## development notes: 
+## development notes
 
 referenced this medium tutorial for building the library https://medium.com/simform-engineering/building-a-component-library-with-react-typescript-and-storybook-a-comprehensive-guide-ba189accdaf5 
 
 referenced this medium tutorial for publishing to npm https://medium.com/@irekrog/quick-and-simple-create-and-publish-react-component-on-npm-df528cd26b0
-
-
-
