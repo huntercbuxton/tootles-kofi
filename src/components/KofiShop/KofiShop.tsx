@@ -3,7 +3,7 @@ import "./kofi_shop.css";
 export interface KofiShopCardProps {
   Alias: string;
   Name: string;
-  Price: string;
+  Price: number;
   ThumbnailUrls: string[];
   Description: string;
 }
@@ -22,6 +22,7 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
         <img
           loading="lazy"
           src={`https://storage.ko-fi.com/cdn/useruploads/post/${ThumbnailUrls[0]}`}
+          alt={`${Name} thumbnail image`}
           className="shop-item-thumbnail"
         />
         <div className="shop-item-price-container">
@@ -30,19 +31,18 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
       </div>
       <div className="shop-item-details-container">
         <div className="shop-item-details">
-          <span className="shop-item-name">{Name}</span>
-          {Description && (
-            <span className="shop-item-description">{Description}</span>
-          )}
+          <h5 className="shop-item-name">{Name}</h5>
+          {Description && <span className="shop-item-description">{Description}</span> }
         </div>
       </div>
     </a>
   );
 }; 
+
 // this component clones the layout of search results on the `shop` page
 const KofiShopGrid = (props: KofiShopGridProps) => {
   return (
-    <div id="kofi-item-grid"> 
+    <div id="kofi-item-grid" role="list"> 
       {props.inventory.map((item, index) => (
         <KofiShopCard
           key={index}
