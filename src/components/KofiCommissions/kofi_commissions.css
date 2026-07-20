@@ -21,8 +21,7 @@ these styles are meant to be inherited by child elements
 }
 
 .kofi-commission-card {
-    height: auto;
-    max-height: 482px;
+    height: auto; 
     width: 600px;
     max-width: 100%;
     -webkit-box-align: stretch;
