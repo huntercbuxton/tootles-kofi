@@ -13,8 +13,7 @@ export interface KofiShopGridProps {
 }
 
 // clones the views of individual items for sale on a kofi user's 'shop' page
-export const KofiShopCard = (props: KofiShopCardProps) => {
-  const { Alias, Name, Price, ThumbnailUrls, Description } = props;
+export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }: KofiShopCardProps) => { 
 
   return (
     <a href={`http://ko-fi.com/s/${Alias}`} className="shop-item">
@@ -40,10 +39,10 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
 }; 
 
 // this component clones the layout of search results on the `shop` page
-const KofiShopGrid = (props: KofiShopGridProps) => {
+const KofiShopGrid = ({ inventory }: KofiShopGridProps) => {
   return (
     <div id="kofi-item-grid" role="list"> 
-      {props.inventory.map((item, index) => (
+      {inventory.map((item, index) => (
         <KofiShopCard
           key={index}
           Alias={item.Alias}

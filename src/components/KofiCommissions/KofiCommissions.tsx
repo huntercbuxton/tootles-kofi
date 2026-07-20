@@ -10,7 +10,6 @@ export interface KofiCommissionCardProps {
     Description: string;
 }
 
-
 export interface KofiCommissionsListProps {
     items: KofiCommissionCardProps[];
 }
@@ -33,27 +32,21 @@ const mapThumbnailsToImgAttributes = (Name: string, Thumbnails: string[]): ImgAt
     return Thumbnails.map((filename, i) => ({ src: srcTmplt(filename), alt: altTmplt(Name, i) }))
 }
 
-const ThumbnailSlide = (props: ImgAttributes) => {
-
-    const { src, alt } = props;
-
+const ThumbnailSlide = ({ src, alt }: ImgAttributes) => {
+ 
     return (
-        <a
-            className="thumbnail-slide">
-            <img
+        <a className="thumbnail-slide">
+            <img className="thumbnail-slide"
                 loading="lazy"
                 alt={alt}
-                src={src}
-                className="thumbnail-slide"
+                src={src} 
             />
         </a>
     )
 }
 
-// const ThumbnailRightBtn = () =>  <div className="slide-btn"> <ChevronRightIcon /> </div>
-
-const ThumbnailSlider = (props: ThumbnailSliderProps) => {
-    const { thumbnails } = props;
+const ThumbnailSlider = ({ thumbnails }: ThumbnailSliderProps) => {
+  
     return (<div className="kofi-thumbnail-slider">
         {thumbnails.map((x, i) => <ThumbnailSlide key={i} src={x.src} alt={x.alt} />)}
     </div>
@@ -101,8 +94,7 @@ export const KofiCommissionCard = (props: KofiCommissionCardProps) => {
 };
 
 // this component clones the layout of search results on the `shop` page
-export const KofiCommissionsList = (props: KofiCommissionsListProps) => {
-    const { items } = props;
+export const KofiCommissionsList = ({ items }: KofiCommissionsListProps) => { 
 
     return (
         <div className="kofi-commissions-root commissions-list-wrapper" role="list">
