@@ -3,7 +3,7 @@ import "./kofi_shop.css";
 export interface KofiShopCardProps {
   Alias: string;
   Name: string;
-  Price: string;
+  Price: number;
   ThumbnailUrls: string[];
   Description: string;
 }
@@ -13,8 +13,7 @@ export interface KofiShopGridProps {
 }
 
 // clones the views of individual items for sale on a kofi user's 'shop' page
-export const KofiShopCard = (props: KofiShopCardProps) => {
-  const { Alias, Name, Price, ThumbnailUrls, Description } = props;
+export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }: KofiShopCardProps) => { 
 
   return (
     <a href={`http://ko-fi.com/s/${Alias}`} className="shop-item">
@@ -22,6 +21,7 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
         <img
           loading="lazy"
           src={`https://storage.ko-fi.com/cdn/useruploads/post/${ThumbnailUrls[0]}`}
+          alt={`${Name} thumbnail image`}
           className="shop-item-thumbnail"
         />
         <div className="shop-item-price-container">
@@ -30,20 +30,19 @@ export const KofiShopCard = (props: KofiShopCardProps) => {
       </div>
       <div className="shop-item-details-container">
         <div className="shop-item-details">
-          <span className="shop-item-name">{Name}</span>
-          {Description && (
-            <span className="shop-item-description">{Description}</span>
-          )}
+          <h4 className="shop-item-name">{Name}</h4>
+          {Description && <span className="shop-item-description">{Description}</span> }
         </div>
       </div>
     </a>
   );
 }; 
+
 // this component clones the layout of search results on the `shop` page
-const KofiShopGrid = (props: KofiShopGridProps) => {
+const KofiShopGrid = ({ inventory }: KofiShopGridProps) => {
   return (
-    <div id="kofi-item-grid"> 
-      {props.inventory.map((item, index) => (
+    <div id="kofi-item-grid" role="list"> 
+      {inventory.map((item, index) => (
         <KofiShopCard
           key={index}
           Alias={item.Alias}

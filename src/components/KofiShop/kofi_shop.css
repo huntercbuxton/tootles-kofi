@@ -93,7 +93,6 @@ span.shop-item-price {
     height: auto;
     padding: 16px;
     width: 100%;
-    
 }
 
 
@@ -106,17 +105,14 @@ span.shop-item-price {
     position: relative;
 }
 
-span.shop-item-name {
+h4.shop-item-name {
     word-break: break-word;
     text-align: left;
     line-height: normal;
     height: auto;
     overflow: hidden;
-    text-overflow: ellipsis;
-    /* display: -webkit-box; */
-    word-wrap: break-word;
-    /* -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; */
+    text-overflow: ellipsis; 
+    word-wrap: break-word; 
     white-space: pre-wrap;
     color: #192025;
     margin-bottom: 8px;
