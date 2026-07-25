@@ -7,3 +7,7 @@ storybook-static
 **/.DS_Store
 *.code-workspace
 .env
+
+# developer files
+release.sh
+scratch.sh
