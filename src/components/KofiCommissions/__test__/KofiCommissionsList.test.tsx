@@ -74,9 +74,8 @@ describe("KofiCommissionsList", () => {
     const itemData = mockCommissionData[1]
 
     expect(kClistItem?.querySelector('h4.commission-name')?.textContent).toMatch(itemData.Name)
-    expect(kClistItem?.querySelector('div.commission-description')?.textContent).toMatch(itemData.Description)
-
-    expect(kClistItem?.querySelector('a.kofi-action-button.request-commission-btn')?.textContent).toMatch("Request on Ko-fi");
-    expect(kClistItem?.querySelector('span.commission-price')?.textContent).toMatch("$40 +")
+    expect(kClistItem?.querySelector('.commission-description')?.textContent).toMatch(itemData.Description)  
+    expect(kClistItem?.querySelector('.commission-price')?.textContent).toMatch("$40+")
+    expect(kClistItem?.querySelector('a.kofi-action-button.request-commission-btn')?.textContent).toMatch("Request This"); 
   });
 });
