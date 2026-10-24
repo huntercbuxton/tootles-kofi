@@ -1,5 +1,6 @@
 import "./kofi_shop.css"; 
 import "../index.css";
+import React from "react";
 
 export interface KofiShopCardProps {
   Alias: string;
@@ -8,6 +9,7 @@ export interface KofiShopCardProps {
   PercentageDiscount?: number;
   ThumbnailUrls: string[];
   Description: string;
+  IsSoldOut?: boolean;
 }
 
 export interface KofiShopGridProps {
@@ -15,7 +17,7 @@ export interface KofiShopGridProps {
 }
 
 // clones the views of individual items for sale on a kofi user's 'shop' page
-export const KofiShopCard = ({ Alias, Name, Price, PercentageDiscount, ThumbnailUrls, Description }: KofiShopCardProps) => { 
+export const KofiShopCard = ({ Alias, Name, Price, PercentageDiscount, ThumbnailUrls, Description, IsSoldOut }: KofiShopCardProps) => { 
 
   return (
     <a href={`http://ko-fi.com/s/${Alias}`} className="ko-fi shop-item">
@@ -27,12 +29,17 @@ export const KofiShopCard = ({ Alias, Name, Price, PercentageDiscount, Thumbnail
           className="shop-item-thumbnail"
         />
         <div className="shop-item-price-container">
-          { PercentageDiscount ? (
-            <span className="shop-item-price">
-              <span><s className="discounted">${Price}</s></span>
-              <span>${Price * (1 + PercentageDiscount / 100)} </span> 
-            </span>
-          ) : (<span className="shop-item-price">${Price}</span>)}
+          <span className="shop-item-price">
+          { IsSoldOut ? <span>Sold Out</span> 
+              : <React.Fragment>{ PercentageDiscount ? ( 
+                  <React.Fragment>
+                    <span><s className="discounted">${Price}</s></span>
+                    <span>${Price * (1 + PercentageDiscount / 100)} </span> 
+                  </React.Fragment> ) 
+                    : <span className="shop-item-price">${Price}</span> }
+            </React.Fragment>
+          }
+          </span>
         </div>
       </div>
       <div className="shop-item-details-container">
@@ -58,6 +65,7 @@ const KofiShopGrid = ({ inventory }: KofiShopGridProps) => {
           PercentageDiscount={item.PercentageDiscount}
           ThumbnailUrls={item.ThumbnailUrls}
           Description={item.Description}
+          IsSoldOut={item.IsSoldOut}
         />
       ))}
     </div>
