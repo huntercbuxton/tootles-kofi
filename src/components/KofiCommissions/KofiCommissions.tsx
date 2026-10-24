@@ -1,5 +1,27 @@
 import { useState, useEffect } from "react";
-import "./kofi_commissions.css";
+import "./kofi_commissions.css"; 
+import "../index.css";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLayerGroup, faPlus } from '@fortawesome/free-solid-svg-icons';
+
+/** This mimicks the layer-plus icon, which requires a pro subscription */
+function LayerPlusIcon() {
+  return (
+    <span className="fa-layers fa-fw" style={{ fontSize: '1.5em' }} > 
+      <FontAwesomeIcon  
+        icon={faLayerGroup} 
+        size="2xs" 
+        transform="down-9 left-8"  
+      /> 
+      <FontAwesomeIcon 
+        icon={faPlus} 
+        transform="shrink-6 up-2 right-2" 
+        size="2xs"  
+      />
+    </span>
+  );
+}
 
 export interface KofiCommissionCardProps {
     Alias: string;
@@ -69,25 +91,24 @@ export const KofiCommissionCard = (props: KofiCommissionCardProps) => {
     }, [Alias])
 
     return (
-        <div className="kofi-commissions-root kofi-commission-card">
+        <div className="ko-fi kofi-commissions-root kofi-commission-card">
             <header className="kofi-commission-header">
                 <div className="commission-name-column">
                     <h4 className="commission-name">{Name}</h4>
                 </div>
                 <div className="commission-price-column" >
-                    <span className="commission-price">{`$${Price} +`}</span>
+                    <span className="commission-price">
+                        <span>{`$${Price}`}</span>
+                        <span>+</span>
+                    </span>
                 </div>
             </header>
-            <div className="commission-description">
-                <p>{Description}</p>
-            </div>
-            <div className="kofi-thumbnail-slider">
-                <ThumbnailSlider thumbnails={thumbnailsData} />
-            </div>
+            <p className="commission-description line-breaks">{Description}</p>
+           <ThumbnailSlider thumbnails={thumbnailsData} />
             <div>
-                {AddOnsAvailable && <p className="add-ons-available">Add-ons available</p>}
+                {AddOnsAvailable && <p className="add-ons-available"><LayerPlusIcon/>Add-ons available</p>}
                 <a className="kofi-action-button request-commission-btn"
-                    href={kofiLinkUrl}>Request on Ko-fi</a>
+                    href={kofiLinkUrl}>Request This</a>
             </div>
         </div>
     )
@@ -97,7 +118,7 @@ export const KofiCommissionCard = (props: KofiCommissionCardProps) => {
 export const KofiCommissionsList = ({ items }: KofiCommissionsListProps) => { 
 
     return (
-        <div className="kofi-commissions-root commissions-list-wrapper" role="list">
+        <div className="ko-fi kofi-commissions-root commissions-list-wrapper" role="list">
             {items.map((item, index) => <KofiCommissionCard
                 key={index}
                 Alias={item.Alias}
