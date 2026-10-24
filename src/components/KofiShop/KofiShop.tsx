@@ -1,4 +1,5 @@
 import "./kofi_shop.css"; 
+import "../index.css";
 
 export interface KofiShopCardProps {
   Alias: string;
@@ -16,7 +17,7 @@ export interface KofiShopGridProps {
 export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }: KofiShopCardProps) => { 
 
   return (
-    <a href={`http://ko-fi.com/s/${Alias}`} className="shop-item">
+    <a href={`http://ko-fi.com/s/${Alias}`} className="ko-fi shop-item">
       <div className="shop-item-thumbnail">
         <img
           loading="lazy"
@@ -41,7 +42,7 @@ export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }:
 // this component clones the layout of search results on the `shop` page
 const KofiShopGrid = ({ inventory }: KofiShopGridProps) => {
   return (
-    <div id="kofi-item-grid" role="list"> 
+    <div id="kofi-item-grid" className="ko-fi" role="list"> 
       {inventory.map((item, index) => (
         <KofiShopCard
           key={index}
