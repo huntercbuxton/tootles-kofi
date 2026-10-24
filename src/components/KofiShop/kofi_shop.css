@@ -83,8 +83,20 @@ span.shop-item-price {
     background-color: rgba(76, 141, 238, 0.93);
     color: #fff;
     padding: 2px 8px;
-    border-radius: 8px;
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: column;
+}
+
+span.shop-item-price > span {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     font-weight: 600;
+}
+
+span.shop-item-price .discounted {
+   font-weight: regular;
 }
 
 .shop-item-details-container {

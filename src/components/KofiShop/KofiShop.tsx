@@ -5,6 +5,7 @@ export interface KofiShopCardProps {
   Alias: string;
   Name: string;
   Price: number;
+  PercentageDiscount?: number;
   ThumbnailUrls: string[];
   Description: string;
 }
@@ -14,7 +15,7 @@ export interface KofiShopGridProps {
 }
 
 // clones the views of individual items for sale on a kofi user's 'shop' page
-export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }: KofiShopCardProps) => { 
+export const KofiShopCard = ({ Alias, Name, Price, PercentageDiscount, ThumbnailUrls, Description }: KofiShopCardProps) => { 
 
   return (
     <a href={`http://ko-fi.com/s/${Alias}`} className="ko-fi shop-item">
@@ -26,7 +27,12 @@ export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }:
           className="shop-item-thumbnail"
         />
         <div className="shop-item-price-container">
-          <span className="shop-item-price">${Price}</span>
+          { PercentageDiscount ? (
+            <span className="shop-item-price">
+              <span><s className="discounted">${Price}</s></span>
+              <span>${Price * (1 + PercentageDiscount / 100)} </span> 
+            </span>
+          ) : (<span className="shop-item-price">${Price}</span>)}
         </div>
       </div>
       <div className="shop-item-details-container">
@@ -49,6 +55,7 @@ const KofiShopGrid = ({ inventory }: KofiShopGridProps) => {
           Alias={item.Alias}
           Name={item.Name}
           Price={item.Price}
+          PercentageDiscount={item.PercentageDiscount}
           ThumbnailUrls={item.ThumbnailUrls}
           Description={item.Description}
         />
