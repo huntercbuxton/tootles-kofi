@@ -1,11 +1,11 @@
  
 #kofi-item-grid {
     min-height: 320px;
-    padding: 0 1em;
+    padding: 0  !important;
     border-radius: .2em;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,3fr));
+    grid-template-columns: repeat(auto-fit,minmax(288px,3fr));
     grid-gap: 1.6em;
     width: 100%;
     max-width: 1000px;
@@ -89,14 +89,16 @@ span.shop-item-price {
 }
 
 span.shop-item-price > span {
+  font-weight: 600;
+}
+
+
+span.shop-item-price .discounted {
+    font-weight: regular;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    font-weight: 600;
-}
-
-span.shop-item-price .discounted {
-   font-weight: regular;
+   
 }
 
 .shop-item-details-container {
