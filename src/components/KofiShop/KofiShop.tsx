@@ -34,7 +34,7 @@ export const KofiShopCard = ({ Alias, Name, Price, PercentageDiscount, Thumbnail
               : <React.Fragment>{ PercentageDiscount ? ( 
                   <React.Fragment>
                     <span><s className="discounted">${Price}</s></span>
-                    <span>${Price * (1 + PercentageDiscount / 100)} </span> 
+                    <span>${Price * (PercentageDiscount / 100)} </span> 
                   </React.Fragment> ) 
                     : <span className="shop-item-price">${Price}</span> }
             </React.Fragment>
