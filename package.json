@@ -1,6 +1,6 @@
 {
   "name": "tootles-kofi",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "React components for embedding kofi shop products into custom web pages",
   "keywords": [
     "kofi",
@@ -45,7 +45,7 @@
     "/dist"
   ],
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.3.1", 
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0"
   }
