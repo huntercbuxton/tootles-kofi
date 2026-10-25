@@ -1,11 +1,15 @@
 import "./kofi_shop.css"; 
+import "../index.css";
+import React from "react";
 
 export interface KofiShopCardProps {
   Alias: string;
   Name: string;
   Price: number;
+  PercentageDiscount?: number;
   ThumbnailUrls: string[];
   Description: string;
+  IsSoldOut?: boolean;
 }
 
 export interface KofiShopGridProps {
@@ -13,10 +17,10 @@ export interface KofiShopGridProps {
 }
 
 // clones the views of individual items for sale on a kofi user's 'shop' page
-export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }: KofiShopCardProps) => { 
+export const KofiShopCard = ({ Alias, Name, Price, PercentageDiscount, ThumbnailUrls, Description, IsSoldOut }: KofiShopCardProps) => { 
 
   return (
-    <a href={`http://ko-fi.com/s/${Alias}`} className="shop-item">
+    <a href={`http://ko-fi.com/s/${Alias}`} className="ko-fi shop-item">
       <div className="shop-item-thumbnail">
         <img
           loading="lazy"
@@ -25,7 +29,17 @@ export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }:
           className="shop-item-thumbnail"
         />
         <div className="shop-item-price-container">
-          <span className="shop-item-price">${Price}</span>
+          <span className="shop-item-price">
+          { IsSoldOut ? <span>Sold Out</span> 
+              : <React.Fragment>{ PercentageDiscount ? ( 
+                  <React.Fragment>
+                    <span><s className="discounted">${Price}</s></span>
+                    <span>${Price * (PercentageDiscount / 100)} </span> 
+                  </React.Fragment> ) 
+                    : <span>${Price}</span> }
+            </React.Fragment>
+          }
+          </span>
         </div>
       </div>
       <div className="shop-item-details-container">
@@ -41,15 +55,17 @@ export const KofiShopCard = ({ Alias, Name, Price, ThumbnailUrls, Description }:
 // this component clones the layout of search results on the `shop` page
 const KofiShopGrid = ({ inventory }: KofiShopGridProps) => {
   return (
-    <div id="kofi-item-grid" role="list"> 
+    <div id="kofi-item-grid" className="ko-fi" role="list"> 
       {inventory.map((item, index) => (
         <KofiShopCard
           key={index}
           Alias={item.Alias}
           Name={item.Name}
           Price={item.Price}
+          PercentageDiscount={item.PercentageDiscount}
           ThumbnailUrls={item.ThumbnailUrls}
           Description={item.Description}
+          IsSoldOut={item.IsSoldOut}
         />
       ))}
     </div>

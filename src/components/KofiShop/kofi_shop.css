@@ -1,11 +1,11 @@
  
 #kofi-item-grid {
     min-height: 320px;
-    padding: 0 1em;
+    padding: 0  !important;
     border-radius: .2em;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,3fr));
+    grid-template-columns: repeat(auto-fit,minmax(288px,3fr));
     grid-gap: 1.6em;
     width: 100%;
     max-width: 1000px;
@@ -37,6 +37,7 @@ a.shop-item {
     background-color: #ffffff;
     display: flex; 
     min-height: 45px;
+    overflow: hidden;
 }
 
  
@@ -82,7 +83,22 @@ span.shop-item-price {
     background-color: rgba(76, 141, 238, 0.93);
     color: #fff;
     padding: 2px 8px;
-    border-radius: 8px;
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: column;
+}
+
+span.shop-item-price > span {
+  font-weight: 600;
+}
+
+
+span.shop-item-price .discounted {
+    font-weight: regular;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+   
 }
 
 .shop-item-details-container {
@@ -117,6 +133,7 @@ h4.shop-item-name {
     color: #192025;
     margin-bottom: 8px;
     font-weight: 600;
+    font-size: 16px !important;
 }
 
 span.shop-item-description {
@@ -125,15 +142,17 @@ span.shop-item-description {
     line-height: normal;
     height: auto;
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    word-wrap: break-word;
-    /* -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; */
+    text-overflow: ellipsis; 
+    word-wrap: break-word; 
     color: #192025;
     white-space: pre-wrap;
     opacity: .6;
     font-size: 14px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 3;  /* Standard property for modern compatibility */
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap; 
 }
  
 .kofi-background {

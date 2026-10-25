@@ -29,7 +29,7 @@ const mockCommissionData = {
 
 describe("KofiCommissionCard", () => {
   it("Should render all text for the item", () => {
-    render(
+    const { container } =   render(
       <KofiCommissionCard
         Alias={mockCommissionData.Alias}
         Name={mockCommissionData.Name}
@@ -40,12 +40,12 @@ describe("KofiCommissionCard", () => {
       />,
     );
 
-    expect(screen.getByText("Request on Ko-fi")).toBeInTheDocument();
+    expect(screen.getByText("Request This")).toBeInTheDocument();
 
     expect(screen.getByText(mockCommissionData.Name)).toBeInTheDocument();
     // should render the same text but without the newline chars
     expect(screen.getByText("Custom cozy hand-crocheted acrylic cat ear beanie. Stretchy, warm, and fun—ideal for y2k, kawaii, cosplay, or adding a bold statement to your winter look. You get to choose the colors!")).toBeInTheDocument();
-    expect(screen.getByText("$20 +")).toBeInTheDocument();
+    expect(container.querySelector('.commission-price')?.textContent).toMatch("$20+");
     expect(screen.getByText("Add-ons available")).toBeInTheDocument();
 
   });
